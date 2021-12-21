@@ -163,11 +163,15 @@ namespace Calculator
 
         private void rootBtn_Click(object sender, RoutedEventArgs e)
         {
-            x = Convert.ToDouble(operationsTxtBox.Text);
-            result = Math.Sqrt(x);
-            operationsTxtBox.Text = result.ToString();
+            if (operationsTxtBox.Text != null)
+            {
+                x = Convert.ToDouble(operationsTxtBox.Text);
+                result = Math.Sqrt(x);
+                operationsTxtBox.Text = result.ToString();
 
-            firstNum.Text = "√" + x.ToString();
+                firstNum.Text = "√" + x.ToString();
+            }
+            
 
         }
 
@@ -175,11 +179,15 @@ namespace Calculator
         {
             if (IsTextAllowed(operationsTxtBox.Text))
             {
-                x = Convert.ToDouble(operationsTxtBox.Text);
-                result = x * x;
-                operationsTxtBox.Text = result.ToString();
+                if (operationsTxtBox.Text != null)
+                {
+                    x = Convert.ToDouble(operationsTxtBox.Text);
+                    result = x * x;
+                    operationsTxtBox.Text = result.ToString();
 
-                firstNum.Text = x.ToString() + "2";
+                    firstNum.Text = x.ToString() + "2";
+                }
+                
             }
             else
             {
